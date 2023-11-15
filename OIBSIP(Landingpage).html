@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --primary-color: #B43757;
+  --primary-color-dark: #c3282b;
+  --secondary-color: #f9f9f9;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --white: #3A0002;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #E6E6FA;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.section__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.section__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section__nav span {
+  padding: 0 7px;
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  border: 1px solid var(--text-dark);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.section__nav span:hover {
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 2px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: #f0c8c9;
+  border-radius: 1rem;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--secondary-color);
+}
+
+.header {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__logo a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header__container {
+  padding: 5rem 1rem 10rem;
+}
+
+.header__container h1 {
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  margin-inline: auto;
+  font-size: 3.5rem;
+  color: var(--white);
+  text-align: center;
+}
+
+.header__form {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.header__form form {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.input__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input__group label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.input__group input {
+  max-width: 140px;
+  outline: none;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.trending__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.trending__card {
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px orange;
+  transition: 0.3s;
+}
+
+.trending__card img {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.trending__card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.trending__card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.trending__details {
+  padding-block: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.trending__details p {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.trending__details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.trending__ratings span {
+  font-size: 0.9rem;
+  color: goldenrod;
+}
+
+.trending__ratings p {
+  text-align: right;
+}
+
+.trending__card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.trending__card h5 span {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.trending__card p span {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.trending__card:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.destination__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 350px repeat(3, 1fr);
+  grid-auto-rows: max-content;
+  gap: 1.5rem;
+}
+
+.destination__card {
+  position: relative;
+}
+
+.destination__card:nth-child(1) {
+  grid-area: 1/1/3/2;
+}
+
+.destination__card:nth-child(2) {
+  grid-area: 1/2/2/4;
+}
+
+.destination__card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.destination__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.destination__details h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.destination__details p {
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.seller__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.seller__image {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.seller__image__content {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.seller__image .badge {
+  left: unset;
+  right: 1rem;
+}
+
+.seller__image__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.seller__price p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.seller__price h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.seller__image__footer .btn {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.seller__details {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.seller__details h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.seller__details p {
+  color: var(--text-light);
+}
+
+.seller__card:hover .seller__image__content {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.tour {
+  margin-bottom: 2rem;
+  
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tour__container {
+  padding-bottom: 0;
+}
+
+.tour__container h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+}
+
+.video__container {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  height: 300px;
+  overflow: hidden;
+  background-color: var(--text-light);
+  transform: translateY(2rem);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+}
+
+.guide__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.guide__card {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.guide__image {
+  position: relative;
+}
+
+.guide__socials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.guide__card:hover .guide__socials {
+  opacity: 1;
+}
+
+.guide__socials > div {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.guide__socials a {
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 100%;
+}
+
+.guide__socials .btn {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.guide__content {
+  padding: 1.5rem;
+}
+
+.guide__details {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.guide__details h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.guide__card .guide__details p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.guide__card p {
+  color: var(--text-light);
+}
+
+.guide__card:hover {
+  box-shadow: 5px 5px 30px 	#00A36C;
+}
+
+.client__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.client__card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.client__card__header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.client__card__header span {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.client__card__header .ratings span {
+  font-size: 1.2rem;
+  color: goldenrod;
+}
+
+.client__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.client__card__footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client__card__footer img {
+  max-width: 60px;
+  border-radius: 100%;
+}
+
+.client__card__footer h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.client__card__footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.client__card:hover {
+  box-shadow: 5px 5px 30px  #FF5733;
+}
+
+.subscribe {
+  
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.subscribe__container h4 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+}
+
+.subscribe__container form {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px;
+}
+
+.subscribe__container input {
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col p {
+  max-width: 300px;
+  color: var(--text-light);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col a {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.footer__col a:hover {
+  color: var(--primary-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer__socials span a {
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 10px;
+  color: var(--white);
+  
+  border-radius: 100%;
+}
+
+.footer__socials span a:hover {
+  
+  background-color: var(--primary-color-dark);
+  
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+@media (width < 1200px) {
+  .destination__grid {
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width < 900px) {
+  .nav__links {
+    gap: 1rem;
+  }
+
+  .link a {
+    padding: 0;
+  }
+
+  .trending__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .destination__card:nth-child(1),
+  .destination__card:nth-child(2) {
+    grid-area: unset;
+  }
+
+  .seller__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .guide__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .footer__col:nth-child(4) {
+    grid-area: 2/1/3/2;
+  }
+}
+
+@media (width < 600px) {
+  .nav__links {
+    display: none;
+  }
+
+  .header__form form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .trending__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seller__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .guide__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .subscribe__container input {
+    padding: 0 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+   
+  .destination__card{
+      height: 200px;
+      width: 150px;
+      border-radius:3px;
+      border:1px solid red;
+   }
+   .video__container{
+       height:150px;
+       width:auto;
+       border-radius:3px;
+       border:2px solid blue;
+       
+   }
+   .btn1 {
+  padding: 0.40rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: yellow;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn1:hover {
+  background-color: red;
+  padding: 0.30rem 0.80rem;
+}
+.btn1{
+    margin-top:270px;
+    margin-left:230px;
+}
+.s{
+    font-size:100px;
+}
+    </style>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__logo"><a href="#">Landing Page</a></div>
+        <ul class="nav__links">
+          <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="#trending">Trending</a></li>
+          <li class="link"><a href="#destination">Destinations</a></li>
+          <li class="link"><a href="#guide">Guide</a></li>
+          <li class="link"><a href="#client">Client</a></li>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <h1>Explore the beauty of nature Discover the new you</h1>
+        <div class="header__form">
+          <form action="/">
+            <div class="input__group">
+              <label for="destination">Where do you want to go?</label>
+              <input type="text" placeholder="Country, ZIP" />
+            </div>
+            <div class="input__group">
+              <label for="checkIn">Check In</label>
+              <input type="text" placeholder="Choose a date" />
+            </div>
+            <div class="input__group">
+              <label for="CheckOut">Check Out</label>
+              <input type="text" placeholder="Choose a date" />
+            </div>
+            <div class="input__group">
+              <label for="guests">Guests</label>
+              <input type="text" placeholder="Number of guests" />
+            </div>
+            <button class="btn">CHECK AVAILABILITY</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <section class="section__container trending__container" id="trending">
+      <div class="section__header">
+        <h2 class="section__title">Trending 2023</h2>
+        <div class="section__nav">
+          <span><i class="ri-arrow-left-s-line"></i></span>
+          <span><i class="ri-arrow-right-s-line"></i></span>
+        </div>
+      </div>
+      <div class="trending__grid">
+        <div class="trending__card">
+          
+          <h1>Mountain Hiking Tour</h1>
+          <p>Hiking Our | Stoke On Trent</p>
+          <div class="trending__details">
+            <div class="price">
+              <p>From</p>
+              <h3>$957.50</h3>
+              <p>*Price varies</p>
+            </div>
+            <div class="trending__ratings">
+              <div>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-half-fill"></i></span>
+                <span><i class="ri-star-line"></i></span>
+              </div>
+              <p>4.8 (10)</p>
+            </div>
+          </div>
+          <h5>
+            <span><i class="ri-time-line"></i></span> 7 days
+          </h5>
+          <p>
+            <span><i class="ri-check-line"></i></span> Free Cancellation
+          </p>
+        </div>
+        <div class="trending__card">
+          
+          <h1>Train Tour Skyline</h1>
+          <p>Adventure Journey | Group Tour</p>
+          <div class="trending__details">
+            <div class="price">
+              <p>From</p>
+              <h3>$500.50</h3>
+              <p>*Price varies</p>
+            </div>
+            <div class="trending__ratings">
+              <div>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-half-fill"></i></span>
+                <span><i class="ri-star-line"></i></span>
+              </div>
+              <p>4.2 (25)</p>
+            </div>
+          </div>
+          <h5>
+            <span><i class="ri-time-line"></i></span> 3 days
+          </h5>
+          <p>
+            <span><i class="ri-check-line"></i></span> Free Cancellation
+          </p>
+        </div>
+        <div class="trending__card">
+          
+          <h1>Wild Forest Life</h1>
+          <p>Scenic Beauty | Adrenaline Rush</p>
+          <div class="trending__details">
+            <div class="price">
+              <p>From</p>
+              <h3>$745.00</h3>
+              <p>*Price varies</p>
+            </div>
+            <div class="trending__ratings">
+              <div>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-half-fill"></i></span>
+                <span><i class="ri-star-line"></i></span>
+              </div>
+              <p>4.5 (15)</p>
+            </div>
+          </div>
+          <h5>
+            <span><i class="ri-time-line"></i></span> 6 days
+          </h5>
+          <p>
+            <span><i class="ri-check-line"></i></span> Free Cancellation
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container destination__container" id="destination">
+      <div class="section__header">
+        <h2 class="section__title">Top Destinations</h2>
+        <div class="section__nav">
+          <span><i class="ri-arrow-left-s-line"></i></span>
+          <span><i class="ri-arrow-right-s-line"></i></span>
+        </div>
+      </div>
+      <div class="destination__grid">
+        <div class="destination__card">
+          
+          <div class="badge">4.7</div>
+          <div class="destination__details">
+            <h4>Himalayas</h4>
+            <p>Mountains</p>
+          </div>
+        </div>
+        <div class="destination__card">
+          
+          <div class="badge">4.5</div>
+          <div class="destination__details">
+            <h4>London</h4>
+            <p>Beauty</p>
+          </div>
+        </div>
+        <div class="destination__card">
+         
+          <div class="badge">4.3</div>
+          <div class="destination__details">
+            <h4>Tokyo</h4>
+            <p>Tradition</p>
+          </div>
+        </div>
+        <div class="destination__card">
+          
+          <div class="badge">4.8</div>
+          <div class="destination__details">
+            <h4>Greece</h4>
+            <p>White Dome</p>
+          </div>
+        </div>
+        <div class="destination__card">
+          
+          <div class="badge">4.2</div>
+          <div class="destination__details">
+            <h4>Sydney</h4>
+            <p>Waterfall</p>
+          </div>
+        </div>
+        <div class="destination__card">
+          
+          <div class="badge">4.7</div>
+          <div class="destination__details">
+            <h4>Amsterdam</h4>
+            <p>Peace</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container seller__container" id="seller">
+      <div class="section__header">
+        <h2 class="section__title">Best Seller</h2>
+        <div class="section__btn">
+          <button class="btn">Check All</button>
+        </div>
+      </div>
+      <div class="seller__grid">
+        <div class="seller__card">
+          <div class="seller__image">
+            
+            <div class="seller__image__content">
+              <div class="badge">30%</div>
+              <div class="seller__image__footer">
+                <div class="seller__price">
+                  <p>10 Days | 09 Nights</p>
+                  <h4>$955.50</h4>
+                </div>
+                <button class="btn">Explore</button>
+              </div>
+            </div>
+          </div>
+          <div class="seller__details">
+            <h4>Trains Tour Skyline</h4>
+            <p>Embark on a scenic railway adventure with Trains Tour Skyline</p>
+          </div>
+        </div>
+        <div class="seller__card">
+          <div class="seller__image">
+            
+            <div class="seller__image__content">
+              <div class="badge">20%</div>
+              <div class="seller__image__footer">
+                <div class="seller__price">
+                  <p>05 Days | 06 Nights</p>
+                  <h4>$785.50</h4>
+                </div>
+                <button class="btn">Explore</button>
+              </div>
+            </div>
+          </div>
+          <div class="seller__details">
+            <h4>Sea Nature View</h4>
+            <p>Where the ocean's beauty meets your soul's serenity</p>
+          </div>
+        </div>
+        <div class="seller__card">
+          <div class="seller__image">
+         
+            <div class="seller__image__content">
+              <div class="badge">25%</div>
+              <div class="seller__image__footer">
+                <div class="seller__price">
+                  <p>07 Days | 06 Nights</p>
+                  <h4>$555.00</h4>
+                </div>
+                <button class="btn">Explore</button>
+              </div>
+            </div>
+          </div>
+          <div class="seller__details">
+            <h4>Tokyo Market Ptr</h4>
+            <p>Where Tradition Meets Modern Marvels in Every Aisle</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tour">
+      <div class="section__container tour__container">
+        <h4>Watch Our Video Tour</h4>
+        <div class="video__container">
+          <video src="/storage/emulated/0/Download/The_7_Wonders_of_the_World_in_2_minutes._E6Gc_2RHd-I_299.mp4" autoplay loop muted></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container guide__container" id="guide">
+      <div class="section__header">
+        <h2 class="section__title">Tour Guide</h2>
+        <div class="section__nav">
+          <span><i class="ri-arrow-left-s-line"></i></span>
+          <span><i class="ri-arrow-right-s-line"></i></span>
+        </div>
+      </div>
+      <div class="guide__grid">
+        <div class="guide__card">
+          <div class="guide__image">
+            
+            <div class="guide__socials">
+              <div>
+                <span>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </span>
+                <span>
+                  <a href="#"><i class="ri-instagram-line"></i></a>
+                </span>
+                <span>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                </span>
+              </div>
+              <button class="btn1">Follow me</button>
+            </div>
+          </div>
+          <div class="guide__content">
+            <div class="guide__details">
+              <h4>Elias Hossain</h4>
+              <p>Forest Guide</p>
+            </div>
+            <p>
+              With a deep passion for forests, our experts are committed to
+              craft immersive experiences to connect with the wilderness.
+            </p>
+          </div>
+        </div>
+        <div class="guide__card">
+          <div class="guide__image">
+            
+            <div class="guide__socials">
+              <div>
+                <span>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </span>
+                <span>
+                  <a href="#"><i class="ri-instagram-line"></i></a>
+                </span>
+                <span>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                </span>
+              </div>
+              <button class="btn1">Follow me</button>
+            </div>
+          </div>
+          <div class="guide__content">
+            <div class="guide__details">
+              <h4>Ahmed Hamdy</h4>
+              <p>Ocean Guide</p>
+            </div>
+            <p>
+              Join us as we embark on a journey of inspiring encounters in the
+              ocean's surface where secrets become your unforgettable memories.
+            </p>
+          </div>
+        </div>
+        <div class="guide__card">
+          <div class="guide__image">
+         
+            <div class="guide__socials">
+              <div>
+                <span>
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                </span>
+                <span>
+                  <a href="#"><i class="ri-instagram-line"></i></a>
+                </span>
+                <span>
+                  <a href="#"><i class="ri-facebook-fill"></i></a>
+                </span>
+              </div>
+              <button class="btn1">Follow me</button>
+            </div>
+          </div>
+          <div class="guide__content">
+            <div class="guide__details">
+              <h4>Esiam Samir</h4>
+              <p>City Guide</p>
+            </div>
+            <p>
+              With a passion for travel and a commitment to excellence, we
+              curate memorable experiences that go beyond the ordinary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container client__container" id="client">
+      <div class="section__header">
+        <h2 class="section__title">Clients Feedback</h2>
+        <div class="section__nav">
+          <span><i class="ri-arrow-left-s-line"></i></span>
+          <span><i class="ri-arrow-right-s-line"></i></span>
+        </div>
+      </div>
+      <div class="client__grid">
+        <div class="client__card">
+          <div class="client__card__header">
+            <span><i class="ri-double-quotes-r"></i></span>
+            <div class="ratings">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-half-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+            </div>
+          </div>
+          <p>
+            I had the most incredible experience using this tour and travel
+            website. From booking my flights and accommodations to discovering
+            unique local activities, everything was seamless and well-organized.
+            It made my trip stress-free and unforgettable. I can't wait to plan
+            my next adventure with them!
+          </p>
+          <div class="client__card__footer">
+           
+            <div class="client__details">
+              <h4>Mike Henderson</h4>
+              <p>Business Manager & CEO</p>
+            </div>
+          </div>
+        </div>
+        <div class="client__card">
+          <div class="client__card__header">
+            <span><i class="ri-double-quotes-r"></i></span>
+            <div class="ratings">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+            </div>
+          </div>
+          <p>
+            As a frequent traveler, I've used various tour and travel websites,
+            but this one stands out for its attention to detail and personalized
+            recommendations. The itineraries they offer are thoughtfully
+            curated, and the insider tips on their blog were a game-changer for
+            my recent trip. Highly recommended! Thanks to them.
+          </p>
+          <div class="client__card__footer">
+            
+            <div class="client__details">
+              <h4>Paul Harrison</h4>
+              <p>Director</p>
+            </div>
+          </div>
+        </div>
+        <div class="client__card">
+          <div class="client__card__header">
+            <span><i class="ri-double-quotes-r"></i></span>
+            <div class="ratings">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+            </div>
+          </div>
+          <p>
+            I'm not an experienced traveler, but this website made me feel like
+            a pro. The customer support team was incredibly helpful in guiding
+            me through the planning process, and their city guides provided
+            valuable insights. Thanks to them, I had a fantastic time exploring
+            a new city with confidence. I can't thank them enough!
+          </p>
+          <div class="client__card__footer">
+            
+            <div class="client__details">
+              <h4>John Williams</h4>
+              <p>Content Writer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <div class="section__container subscribe__container">
+        <h4>Subscribe and be Updated</h4>
+        <form action="/">
+          <input type="text" placeholder="Please enter your email address" />
+          <button class="btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h5>Wanderlust</h5>
+          <p>
+            Welcome to Wanderlust, our tour and travel website is your gateway
+            to a world of wanderlust-inducing experiences.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#destination">Destinations</a>
+          <a href="#subscribe">Write to Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer__col">
+          <h4>Features</h4>
+          <a href="#">Vacation Package</a>
+          <a href="#">List of Tours</a>
+          <a href="#">Gallery</a>
+          <a href="#">Travel on a Budget</a>
+        </div>
+        <div class="footer__col">
+          <h4>Follow Us</h4>
+          <div class="footer__socials">
+            <span>
+              <a href="#" class="s"><i class="ri-twitter-fill">twitter</i></a>
+            </span>
+            <span>
+              <a href="#" class="s"><i class="ri-linkedin-fill">Linkedin</i></a>
+            </span>
+            <span>
+              <a href="#" class="s"><i class="ri-instagram-line">Instagram</i></a>
+            </span>
+            <span>
+              <a href="#" class="s"><i class="ri-facebook-fill">Facebook</i></a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2023 All rights reserved.
+      </div>
+    </footer>
+       <script>
+        const scrollRevealOption = {
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+};
+
+// header container
+ScrollReveal().reveal(".header__container h1", {
+  ...scrollRevealOption,
+});
+
+ScrollReveal().reveal(".header__form", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+
+// trending container
+ScrollReveal().reveal(".trending__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+// destination container
+ScrollReveal().reveal(".destination__card", {
+  duration: 1000,
+  interval: 500,
+});
+
+// seller container
+ScrollReveal().reveal(".seller__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+// guide container
+ScrollReveal().reveal(".guide__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+//  client container
+ScrollReveal().reveal(".client__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+    </script>
+  </body>
+</html>
